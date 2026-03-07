@@ -1,0 +1,158 @@
+/* Estilos Básicos e Variáveis */
+:root {
+    --primary-color: #1534bb; /* Laranja escuro, lembrando o Carcará */
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #fff;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.container {
+    padding: 15px;
+    max-width: 600px; /* Otimizado para visualização mobile */
+    margin: 0 auto;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    scrollbar-width: none; /* Esconde scroll no Firefox */
+}
+
+.filters::-webkit-scrollbar {
+    display: none; /* Esconde scroll no Chrome/Safari */
+}
+
+.filter-btn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Cards das Fontes */
+.source-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: block; /* Para o filtro JS */
+}
+
+.card-header {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.card-type {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background-color: #eee;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #666;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+/* Conteúdo Expansível */
+.card-content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: #fafafa;
+    border-top: 1px solid transparent;
+}
+
+.card-content.open {
+    padding: 15px;
+    max-height: 500px; /* Valor alto suficiente para o texto */
+    border-top: 1px solid #eee;
+}
+
+.key-info {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+}
+
+.key-info strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.source-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
